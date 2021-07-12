@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AstroFocus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="topnav">
+        <h1>Controls</h1>
+    </div>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+                <p class="card-title">Focus speed</p>
+                <p class="switch">
+                    <input type="range" onchange="updateSliderPWM(this)" id="slider1" min="0" max="100" step="1" value ="0" class="slider">
+                </p>
+                <p class="state">Focus speed: <span id="sliderValue1"></span> &percnt;</p>
+            </div>
+			<div class="card">
+                <p class="card-title">Focus control</p>
+                <p class="switch">
+                    <button type="button" onmousedown="updateFocusOutStart(this)" onmouseup="updateFocusOutStop(this)">Focus out</button>
+					<button type="button" onmousedown="updateFocusInStart(this) " onmouseup="updateFocusInStop(this)">Focus in</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
