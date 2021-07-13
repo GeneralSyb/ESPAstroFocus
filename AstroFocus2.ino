@@ -41,6 +41,20 @@ const int resolution = 8;
 //Json Variable to Hold Slider Values
 JSONVar sliderValues;
 
+
+// Main methods
+
+// Focus in method
+void FocusIn(float speed) {
+  
+}
+
+// Focus out method
+void FocusOut(float speed) {
+  
+}
+
+
 //Get Slider Values
 String getSliderValues(){
   sliderValues["sliderValue1"] = String(sliderValue1);
@@ -150,12 +164,6 @@ void setup() {
 
   // Start server
   server.begin();
-
-  myservo.setPeriodHertz(50);    // standard 50 hz servo
-  myservo.attach(servoPin, 500, 2400); // attaches the servo on pin 18 to the servo object
-  // using default min/max of 1000us and 2000us
-  // different servos may require different min/max settings
-  // for an accurate 0 to 180 sweep
 }
 
 void loop() {
@@ -169,16 +177,11 @@ void loop() {
     Serial.print("Moving at speed: ");
     Serial.println(focusSpeed);
   }
-  if (focusDirection == "out") {
-    pos = pos + focusSpeed;
-    myservo.write(pos);
-    Serial.print("Moved servo out to pos: ");
-    Serial.println(pos);
-  }
+
   if (focusDirection == "in") {
-    pos = pos - focusSpeed;
-    myservo.write(pos);
-    Serial.print("Moved servo in to pos: ");
-    Serial.println(pos);
+    FocusIn(focusSpeed);
+  }
+  if (focusDirection == "out") {
+    FocusOut(focusSpeed);
   }
 }
