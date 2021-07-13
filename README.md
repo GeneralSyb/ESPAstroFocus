@@ -16,4 +16,6 @@ An ESP32 based remote telescope focuser.
  4. Add your own steppe motor drivers and code in the `FocusIn` and `FocusOut` methods.
  5. Upload the sketch the same way you upload a normal arduino sketch and be sure to select the correct board, which is mostly likely the ESP32 Devkit V1 but you might have to press the BOOT button on the board while uploading.
  6. To upload the webpage data, close any programs that may still be using the COM port, for example the Serial Monitor, go to Tools and press the ESP32 Sketch Data Upload, again, you might have to press the BOOT button whileuploading.
- 7. Done!
+ 
+
+To get to the webpage of the focuser, connect to its wifi, open a webbrowser and type in 192.168.4.1.
